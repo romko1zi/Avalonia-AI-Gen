@@ -33,20 +33,22 @@ A dedicated class `StudentData` encapsulates all student-related information, pr
 ### 2.3. Application Logic (`MainWindow.axaml.cs`)
 
 *   **Code-Behind:** The application logic is intentionally kept simple and resides directly in the `MainWindow.axaml.cs` file.
-*   **Save Functionality:** The `SaveButton_Click` event handler performs the following actions:
+*   **Save Functionality:** The `SaveButton_Click` event handler is `async` and performs the following actions:
     1.  **Data Collection:** It retrieves the values from all input controls (`TextBox`, `DatePicker`, `CheckBox`).
     2.  **Object Population:** A new `StudentData` object is instantiated and populated with the collected data.
     3.  **CSV Formatting:** The data from the `StudentData` object is serialized into a single semicolon-delimited (`;`) string.
-    4.  **File Persistence:** The generated CSV string is appended to the `students.csv` file in the project's root directory using `File.AppendAllText`.
-    5.  **User Feedback:** The window title is changed to "Сохранено!" (Saved!) to provide immediate confirmation to the user.
+    4.  **File Dialog:** It opens a `SaveFileDialog`, allowing the user to choose the location and filename for the CSV file.
+    5.  **File Persistence:** The generated CSV string is appended to the user-selected file path.
+    6.  **User Feedback:** The window title is updated to "Сохранено!" (Saved!) on success or "Сохранение отменено." (Save cancelled.) if the dialog is closed.
 
 ## 3. Current Implementation Plan
 
 *This section is for the current requested change.*
 
-**Request:** Create a student data entry form with CSV saving.
+**Request:** Allow the user to choose the save path for the CSV file.
 
 **Steps:**
-1.  [x] **Create Data Model:** Define the `StudentData` class in `Views/StudentData.cs` with all required properties.
-2.  [x] **Design UI:** Rewrite `Views/MainWindow.axaml` to include a `TabControl` with five tabs, organizing all input fields logically.
-3.  [x] **Implement Logic:** Rewrite `Views/MainWindow.axaml.cs` to handle the `SaveButton_Click` event, gather data from the UI, and append it to `students.csv`.
+1.  [x] **Modify Event Handler:** Change the `SaveButton_Click` method to be `async`.
+2.  [x] **Implement `SaveFileDialog`:** Add code to create, configure, and show a `SaveFileDialog`.
+3.  [x] **Update File Writing:** Use the path returned from the dialog to save the file using `File.AppendAllTextAsync`.
+4.  [x] **Provide User Feedback:** Update the window title to reflect the outcome of the save operation (success or cancellation).

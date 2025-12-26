@@ -4,6 +4,7 @@ using Avalonia.Interactivity;
 using System;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace myapp.Views
 {
@@ -14,7 +15,7 @@ namespace myapp.Views
             InitializeComponent();
         }
 
-        private void SaveButton_Click(object? sender, RoutedEventArgs e)
+        private async void SaveButton_Click(object? sender, RoutedEventArgs e)
         {
             var student = new StudentData
             {
@@ -72,16 +73,31 @@ namespace myapp.Views
 
             var csvLine = new StringBuilder();
             csvLine.Append($"{student.Identifikator};{student.DataPrzyjecia:yyyy-MM-dd};{student.NumerKs};{student.Kierunek};{student.Semestr};{student.DataRozpoczecia:yyyy-MM-dd};{student.RokRozpoczecia};");
-            csvLine.Append($"{student.Pesel};{student.Nazwisko};{student.NazwiskoRodowe};{student.Imie1};{student.Imie2};{student.Plec};{student.DataUrodzenia:yyyy-MM-dd};{student.MiejsceUrodzenia};{student.KrajUrodzenia};{student.Obywatelstwo};\n");
-            csvLine.Append($"{student.Ulica};{student.NumerDomu};{student.NumerLokalu};{student.Miasto};{student.KodPocztowy};{student.Poczta};{student.Gmina};{student.Powiat};{student.Wojewodztwo};\n");
-            csvLine.Append($"{student.KodPocztowyPL};{student.MiastoPL};{student.UlicaPL};{student.NumerDomuPL};\n");
-            csvLine.Append($"{student.ImieOjca};{student.ImieMatki};{student.Telefon};{student.TelegramViber};{student.Email};{student.OsobaKontaktowa};{student.TelefonOsobyKontaktowej};\n");
+            csvLine.Append($"{student.Pesel};{student.Nazwisko};{student.NazwiskoRodowe};{student.Imie1};{student.Imie2};{student.Plec};{student.DataUrodzenia:yyyy-MM-dd};{student.MiejsceUrodzenia};{student.KrajUrodzenia};{student.Obywatelstwo};");
+            csvLine.Append($"{student.Ulica};{student.NumerDomu};{student.NumerLokalu};{student.Miasto};{student.KodPocztowy};{student.Poczta};{student.Gmina};{student.Powiat};{student.Wojewodztwo};");
+            csvLine.Append($"{student.KodPocztowyPL};{student.MiastoPL};{student.UlicaPL};{student.NumerDomuPL};");
+            csvLine.Append($"{student.ImieOjca};{student.ImieMatki};{student.Telefon};{student.TelegramViber};{student.Email};{student.OsobaKontaktowa};{student.TelefonOsobyKontaktowej};");
             csvLine.Append($"{student.Paszport};{student.SeriaNumer};{student.WydanyPrzez};{student.StatusUKR};{student.JestWDzienniku};{student.PrzyczynaOpuszczenia};{student.DataOpuszczenia:yyyy-MM-dd};{student.NumerDecyzji}\n");
 
+            var saveFileDialog = new SaveFileDialog()
+            {
+                Title = "Сохранить как...",
+                DefaultExtension = "csv",
+                InitialFileName = "students.csv",
+                Filters = { new FileDialogFilter() { Name = "CSV Files", Extensions = { "csv" } } }
+            };
 
-            File.AppendAllText("students.csv", csvLine.ToString());
+            string? result = await saveFileDialog.ShowAsync(this);
 
-            this.Title = "Сохранено!";
+            if (result != null)
+            {
+                await File.AppendAllTextAsync(result, csvLine.ToString());
+                this.Title = "Сохранено!";
+            }
+            else
+            {
+                this.Title = "Сохранение отменено.";
+            }
         }
     }
 }
