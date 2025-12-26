@@ -5,6 +5,7 @@ namespace myapp.Views
 {
     public class StudentData
     {
+        public int Id { get; set; }
         // Учеба
         public string? Identifikator { get; set; }
         public DateTime? DataPrzyjecia { get; set; }
@@ -41,7 +42,7 @@ namespace myapp.Views
         public string? TelegramViber { get; set; }
         public string? Email { get; set; }
         public string? OsobaKontaktowa { get; set; }
-        public string? TelefonOsobyKontaktowej { get; set; }
+        public string? TelefonOsobyKontaktowej { get; aget; set; }
 
         // Документы и Статус
         public string? Paszport { get; set; }

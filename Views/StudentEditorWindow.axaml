@@ -1,0 +1,119 @@
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
+        x:Class="myapp.Views.StudentEditorWindow"
+        Title="Edytor studenta"
+        Width="800" Height="700"
+        WindowStartupLocation="CenterScreen">
+    <Grid RowDefinitions="*,Auto">
+        <TabControl Grid.Row="0">
+            <TabItem Header="Edukacja">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Identyfikator:"/>
+                        <TextBox x:Name="IdentifikatorBox"/>
+                        <TextBlock Text="Data przyjęcia:"/>
+                        <CalendarDatePicker x:Name="DataPrzyjeciaPicker"/>
+                        <TextBlock Text="Numer albumu:"/>
+                        <TextBox x:Name="NumerKsBox"/>
+                        <TextBlock Text="Kierunek studiów:"/>
+                        <TextBox x:Name="KierunekBox"/>
+                        <TextBlock Text="Semestr:"/>
+                        <TextBox x:Name="SemestrBox"/>
+                        <TextBlock Text="Data rozpoczęcia:"/>
+                        <CalendarDatePicker x:Name="DataRozpoczeciaPicker"/>
+                        <TextBlock Text="Rok rozpoczęcia:"/>
+                        <TextBox x:Name="RokRozpoczeciaBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Dane osobowe">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="PESEL:"/>
+                        <TextBox x:Name="PeselBox"/>
+                        <TextBlock Text="Nazwisko:"/>
+                        <TextBox x:Name="NazwiskoBox"/>
+                        <TextBlock Text="Nazwisko rodowe:"/>
+                        <TextBox x:Name="NazwiskoRodoweBox"/>
+                        <TextBlock Text="Imię:"/>
+                        <TextBox x:Name="Imie1Box"/>
+                        <TextBlock Text="Drugie imię:"/>
+                        <TextBox x:Name="Imie2Box"/>
+                        <TextBlock Text="Płeć:"/>
+                        <TextBox x:Name="PlecBox"/>
+                        <TextBlock Text="Data urodzenia:"/>
+                        <CalendarDatePicker x:Name="DataUrodzeniaPicker"/>
+                        <TextBlock Text="Miejsce urodzenia:"/>
+                        <TextBox x:Name="MiejsceUrodzeniaBox"/>
+                        <TextBlock Text="Kraj urodzenia:"/>
+                        <TextBox x:Name="KrajUrodzeniaBox"/>
+                        <TextBlock Text="Obywatelstwo:"/>
+                        <TextBox x:Name="ObywatelstwoBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Adres">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Województwo:"/>
+                        <TextBox x:Name="WojewodztwoBox"/>
+                        <TextBlock Text="Miasto:"/>
+                        <TextBox x:Name="MiastoBox"/>
+                        <TextBlock Text="Ulica:"/>
+                        <TextBox x:Name="UlicaBox"/>
+                        <TextBlock Text="Numer budynku / numer lokalu:"/>
+                        <TextBox x:Name="NumerDomuBox" Watermark="Numer budynku"/>
+                        <TextBox x:Name="NumerLokaluBox" Watermark="Numer lokalu (opcjonalnie)"/>
+                        <TextBlock Text="Kod pocztowy:"/>
+                        <MaskedTextBox x:Name="KodPocztowyBox" Mask="00-000"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Rodzina i kontakt">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Imię ojca:"/>
+                        <TextBox x:Name="ImieOjcaBox"/>
+                        <TextBlock Text="Imię matki:"/>
+                        <TextBox x:Name="ImieMatkiBox"/>
+                        <TextBlock Text="Telefon:"/>
+                        <MaskedTextBox x:Name="TelefonBox" Mask="000-000-000"/>
+                        <TextBlock Text="Telegram/Viber:"/>
+                        <TextBox x:Name="TelegramViberBox"/>
+                        <TextBlock Text="Adres e-mail:"/>
+                        <TextBox x:Name="EmailBox"/>
+                        <TextBlock Text="Osoba do kontaktu w nagłych wypadkach:"/>
+                        <TextBox x:Name="OsobaKontaktowaBox"/>
+                        <TextBlock Text="Telefon do osoby kontaktowej:"/>
+                        <TextBox x:Name="TelefonOsobyKontaktowejBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Dokumenty i status">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Numer paszportu:"/>
+                        <TextBox x:Name="PaszportBox"/>
+                        <TextBlock Text="Seria i numer dokumentu:"/>
+                        <TextBox x:Name="SeriaNumerBox"/>
+                        <TextBlock Text="Organ wydający:"/>
+                        <TextBox x:Name="WydanyPrzezBox"/>
+                        <CheckBox x:Name="StatusUKRCheckBox" Content="Status UKR"/>
+                        <CheckBox x:Name="JestWDziennikuCheckBox" Content="Wpisany do dziennika"/>
+                        <TextBlock Text="Przyczyna skreślenia:"/>
+                        <TextBox x:Name="PrzyczynaOpuszczeniaBox"/>
+                        <TextBlock Text="Data skreślenia:"/>
+                        <CalendarDatePicker x:Name="DataOpuszczeniaPicker"/>
+                        <TextBlock Text="Numer decyzji o skreśleniu:"/>
+                        <TextBox x:Name="NumerDecyzjiBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+        <Button Grid.Row="1" Content="Zapisz" HorizontalAlignment="Center" Margin="10" Click="SaveButton_Click"/>
+    </Grid>
+</Window>
