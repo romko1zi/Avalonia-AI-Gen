@@ -1,11 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
+using Avalonia;
+using System;
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
-var url = $"http://0.0.0.0:{port}";
-var target = Environment.GetEnvironmentVariable("TARGET") ?? "World";
+namespace AvaloniaGenerator;
 
-var app = builder.Build();
+class Program
+{
+    [STAThread]
+    public static void Main(string[] args)
+    {
+        // Это заглушка, чтобы проект собирался.
+        // Реальный запуск будет у тебя в Rider.
+        BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+    }
 
-app.MapGet("/", () => $"Hello {target}!");
-
-app.Run(url);
+    public static AppBuilder BuildAvaloniaApp()
+        => AppBuilder.Configure<App>()
+            .UsePlatformDetect()
+            .LogToTrace();
+}
