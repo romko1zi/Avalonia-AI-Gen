@@ -15,10 +15,7 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Здесь мы укажем главное окно, когда создадим его
-            // Пока можно закомментировать или оставить как есть,
-            // но для полного счастья нам нужно создать еще MainWindow
-            // desktop.MainWindow = new MainWindow();
+            desktop.MainWindow = new MainWindow();
         }
 
         base.OnFrameworkInitializationCompleted();
