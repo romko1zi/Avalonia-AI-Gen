@@ -1,33 +1,160 @@
+
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
-        x:Class="myapp.MainWindow"
-        Title="Моя форма"
-        Width="400" Height="600"
-        CanResize="False"
-        WindowStartupLocation="CenterScreen"
-        Background="White">
-    <StackPanel Margin="20" Spacing="15">
-        <TextBlock Text="Тестовая форма" FontWeight="Bold" HorizontalAlignment="Center" />
-        <TextBox Watermark="Введите текст..." />
-        <DatePicker />
-        <NumericUpDown Minimum="0" Maximum="10" Value="1" />
-        <ComboBox>
-            <ComboBoxItem>Красный</ComboBoxItem>
-            <ComboBoxItem>Зеленый</ComboBoxItem>
-            <ComboBoxItem>Синий</ComboBoxItem>
-        </ComboBox>
-        <StackPanel Orientation="Horizontal" Spacing="10">
-            <RadioButton Content="Вариант А" />
-            <RadioButton Content="Вариант Б" />
-        </StackPanel>
-        <CheckBox Content="Я согласен" />
-        <Slider Value="30" />
-        <ListBox Height="100">
-            <ListBoxItem>Строка 1</ListBoxItem>
-            <ListBoxItem>Строка 2</ListBoxItem>
-        </ListBox>
-    </StackPanel>
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
+        x:Class="myapp.Views.MainWindow"
+        Title="Student Data"
+        Width="800" Height="700"
+        WindowStartupLocation="CenterScreen">
+    <Grid RowDefinitions="*,Auto">
+        <TabControl Grid.Row="0">
+            <TabItem Header="Учеба">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Identifikator:"/>
+                        <TextBox x:Name="IdentifikatorBox"/>
+                        <TextBlock Text="Data Przyjecia:"/>
+                        <DatePicker x:Name="DataPrzyjeciaPicker"/>
+                        <TextBlock Text="Numer Ks:"/>
+                        <TextBox x:Name="NumerKsBox"/>
+                        <TextBlock Text="Kierunek:"/>
+                        <TextBox x:Name="KierunekBox"/>
+                        <TextBlock Text="Semestr:"/>
+                        <TextBox x:Name="SemestrBox"/>
+                        <TextBlock Text="Data Rozpoczecia:"/>
+                        <DatePicker x:Name="DataRozpoczeciaPicker"/>
+                        <TextBlock Text="Rok Rozpoczecia:"/>
+                        <TextBox x:Name="RokRozpoczeciaBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Личные данные">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Pesel:"/>
+                        <TextBox x:Name="PeselBox"/>
+                        <TextBlock Text="Nazwisko:"/>
+                        <TextBox x:Name="NazwiskoBox"/>
+                        <TextBlock Text="Nazwisko Rodowe:"/>
+                        <TextBox x:Name="NazwiskoRodoweBox"/>
+                        <TextBlock Text="Imie 1:"/>
+                        <TextBox x:Name="Imie1Box"/>
+                        <TextBlock Text="Imie 2:"/>
+                        <TextBox x:Name="Imie2Box"/>
+                        <TextBlock Text="Plec:"/>
+                        <TextBox x:Name="PlecBox"/>
+                        <TextBlock Text="Data Urodzenia:"/>
+                        <DatePicker x:Name="DataUrodzeniaPicker"/>
+                        <TextBlock Text="Miejsce Urodzenia:"/>
+                        <TextBox x:Name="MiejsceUrodzeniaBox"/>
+                        <TextBlock Text="Kraj Urodzenia:"/>
+                        <TextBox x:Name="KrajUrodzeniaBox"/>
+                        <TextBlock Text="Obywatelstwo:"/>
+                        <TextBox x:Name="ObywatelstwoBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Адрес">
+                <ScrollViewer>
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Margin="10">
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Ulica:"/>
+                            <TextBox x:Name="UlicaBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
+                            <TextBlock Text="Ulica PL:"/>
+                            <TextBox x:Name="UlicaPLBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Numer Domu:"/>
+                            <TextBox x:Name="NumerDomuBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+                            <TextBlock Text="Numer Domu PL:"/>
+                            <TextBox x:Name="NumerDomuPLBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Numer Lokalu:"/>
+                            <TextBox x:Name="NumerLokaluBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Miasto:"/>
+                            <TextBox x:Name="MiastoBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="1" Margin="5">
+                            <TextBlock Text="Miasto PL:"/>
+                            <TextBox x:Name="MiastoPLBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Kod Pocztowy:"/>
+                            <TextBox x:Name="KodPocztowyBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Grid.Column="1" Margin="5">
+                            <TextBlock Text="Kod Pocztowy PL:"/>
+                            <TextBox x:Name="KodPocztowyPLBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="5" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Poczta:"/>
+                            <TextBox x:Name="PocztaBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="6" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Gmina:"/>
+                            <TextBox x:Name="GminaBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="7" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Powiat:"/>
+                            <TextBox x:Name="PowiatBox"/>
+                        </StackPanel>
+                        <StackPanel Grid.Row="8" Grid.Column="0" Margin="5">
+                            <TextBlock Text="Wojewodztwo:"/>
+                            <TextBox x:Name="WojewodztwoBox"/>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Контакты/Семья">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Imie Ojca:"/>
+                        <TextBox x:Name="ImieOjcaBox"/>
+                        <TextBlock Text="Imie Matki:"/>
+                        <TextBox x:Name="ImieMatkiBox"/>
+                        <TextBlock Text="Telefon:"/>
+                        <TextBox x:Name="TelefonBox"/>
+                        <TextBlock Text="Telegram/Viber:"/>
+                        <TextBox x:Name="TelegramViberBox"/>
+                        <TextBlock Text="Email:"/>
+                        <TextBox x:Name="EmailBox"/>
+                        <TextBlock Text="Osoba Kontaktowa:"/>
+                        <TextBox x:Name="OsobaKontaktowaBox"/>
+                        <TextBlock Text="Telefon Osoby Kontaktowej:"/>
+                        <TextBox x:Name="TelefonOsobyKontaktowejBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="Документы/Статус">
+                <ScrollViewer>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Paszport (numer):"/>
+                        <TextBox x:Name="PaszportBox"/>
+                        <TextBlock Text="Seria Numer:"/>
+                        <TextBox x:Name="SeriaNumerBox"/>
+                        <TextBlock Text="Wydany Przez:"/>
+                        <TextBox x:Name="WydanyPrzezBox"/>
+                        <CheckBox x:Name="StatusUKRCheckBox" Content="Status UKR"/>
+                        <CheckBox x:Name="JestWDziennikuCheckBox" Content="Jest w dzienniku"/>
+                        <TextBlock Text="Przyczyna Opuszczenia:"/>
+                        <TextBox x:Name="PrzyczynaOpuszczeniaBox"/>
+                        <TextBlock Text="Data Opuszczenia:"/>
+                        <DatePicker x:Name="DataOpuszczeniaPicker"/>
+                        <TextBlock Text="Numer Decyzji:"/>
+                        <TextBox x:Name="NumerDecyzjiBox"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+        <Button Grid.Row="1" Content="Сохранить в CSV" HorizontalAlignment="Center" Margin="10" Click="SaveButton_Click"/>
+    </Grid>
 </Window>
