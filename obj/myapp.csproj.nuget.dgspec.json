@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/user/avaloniagenerator/myapp.csproj": {}
+    "C:\\Users\\pomko\\RiderProjects\\Avalonia-AI-Gen\\myapp.csproj": {}
   },
   "projects": {
-    "/home/user/avaloniagenerator/myapp.csproj": {
+    "C:\\Users\\pomko\\RiderProjects\\Avalonia-AI-Gen\\myapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/user/avaloniagenerator/myapp.csproj",
+        "projectUniqueName": "C:\\Users\\pomko\\RiderProjects\\Avalonia-AI-Gen\\myapp.csproj",
         "projectName": "myapp",
-        "projectPath": "/home/user/avaloniagenerator/myapp.csproj",
-        "packagesPath": "/home/user/.nuget/packages/",
-        "outputPath": "/home/user/avaloniagenerator/obj/",
+        "projectPath": "C:\\Users\\pomko\\RiderProjects\\Avalonia-AI-Gen\\myapp.csproj",
+        "packagesPath": "C:\\Users\\pomko\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pomko\\RiderProjects\\Avalonia-AI-Gen\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/user/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\pomko\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/nix/store/3hhkyi53ky9qwjj9vjzg0pyq333vlrla-dotnet-sdk-9.0.203/share/dotnet/sdk/9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\pomko\\.dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
