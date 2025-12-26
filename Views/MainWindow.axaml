@@ -16,7 +16,7 @@
                         <TextBlock Text="Identifikator:"/>
                         <TextBox x:Name="IdentifikatorBox"/>
                         <TextBlock Text="Data Przyjecia:"/>
-                        <DatePicker x:Name="DataPrzyjeciaPicker"/>
+                        <CalendarDatePicker x:Name="DataPrzyjeciaPicker"/>
                         <TextBlock Text="Numer Ks:"/>
                         <TextBox x:Name="NumerKsBox"/>
                         <TextBlock Text="Kierunek:"/>
@@ -24,7 +24,7 @@
                         <TextBlock Text="Semestr:"/>
                         <TextBox x:Name="SemestrBox"/>
                         <TextBlock Text="Data Rozpoczecia:"/>
-                        <DatePicker x:Name="DataRozpoczeciaPicker"/>
+                        <CalendarDatePicker x:Name="DataRozpoczeciaPicker"/>
                         <TextBlock Text="Rok Rozpoczecia:"/>
                         <TextBox x:Name="RokRozpoczeciaBox"/>
                     </StackPanel>
@@ -46,7 +46,7 @@
                         <TextBlock Text="Plec:"/>
                         <TextBox x:Name="PlecBox"/>
                         <TextBlock Text="Data Urodzenia:"/>
-                        <DatePicker x:Name="DataUrodzeniaPicker"/>
+                        <CalendarDatePicker x:Name="DataUrodzeniaPicker"/>
                         <TextBlock Text="Miejsce Urodzenia:"/>
                         <TextBox x:Name="MiejsceUrodzeniaBox"/>
                         <TextBlock Text="Kraj Urodzenia:"/>
@@ -58,60 +58,19 @@
             </TabItem>
             <TabItem Header="Адрес">
                 <ScrollViewer>
-                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" Margin="10">
-                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Ulica:"/>
-                            <TextBox x:Name="UlicaBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="0" Grid.Column="1" Margin="5">
-                            <TextBlock Text="Ulica PL:"/>
-                            <TextBox x:Name="UlicaPLBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Numer Domu:"/>
-                            <TextBox x:Name="NumerDomuBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
-                            <TextBlock Text="Numer Domu PL:"/>
-                            <TextBox x:Name="NumerDomuPLBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Numer Lokalu:"/>
-                            <TextBox x:Name="NumerLokaluBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="3" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Miasto:"/>
-                            <TextBox x:Name="MiastoBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="3" Grid.Column="1" Margin="5">
-                            <TextBlock Text="Miasto PL:"/>
-                            <TextBox x:Name="MiastoPLBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="4" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Kod Pocztowy:"/>
-                            <TextBox x:Name="KodPocztowyBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="4" Grid.Column="1" Margin="5">
-                            <TextBlock Text="Kod Pocztowy PL:"/>
-                            <TextBox x:Name="KodPocztowyPLBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="5" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Poczta:"/>
-                            <TextBox x:Name="PocztaBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="6" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Gmina:"/>
-                            <TextBox x:Name="GminaBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="7" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Powiat:"/>
-                            <TextBox x:Name="PowiatBox"/>
-                        </StackPanel>
-                        <StackPanel Grid.Row="8" Grid.Column="0" Margin="5">
-                            <TextBlock Text="Wojewodztwo:"/>
-                            <TextBox x:Name="WojewodztwoBox"/>
-                        </StackPanel>
-                    </Grid>
+                    <StackPanel Margin="10" Spacing="10">
+                        <TextBlock Text="Województwo:"/>
+                        <TextBox x:Name="WojewodztwoBox"/>
+                        <TextBlock Text="Miasto:"/>
+                        <TextBox x:Name="MiastoBox"/>
+                        <TextBlock Text="Ulica:"/>
+                        <TextBox x:Name="UlicaBox"/>
+                        <TextBlock Text="Numer budynku/mieszkania"/>
+                        <TextBox x:Name="NumerDomuBox" Watermark="Numer domu"/>
+                        <TextBox x:Name="NumerLokaluBox" Watermark="Numer lokalu (opcjonalnie)"/>
+                        <TextBlock Text="Kod pocztowy (xx-xxx)"/>
+                        <TextBox x:Name="KodPocztowyBox"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Контакты/Семья">
@@ -148,7 +107,7 @@
                         <TextBlock Text="Przyczyna Opuszczenia:"/>
                         <TextBox x:Name="PrzyczynaOpuszczeniaBox"/>
                         <TextBlock Text="Data Opuszczenia:"/>
-                        <DatePicker x:Name="DataOpuszczeniaPicker"/>
+                        <CalendarDatePicker x:Name="DataOpuszczeniaPicker"/>
                         <TextBlock Text="Numer Decyzji:"/>
                         <TextBox x:Name="NumerDecyzjiBox"/>
                     </StackPanel>

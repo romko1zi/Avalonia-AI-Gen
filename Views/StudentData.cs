@@ -27,21 +27,12 @@ namespace myapp.Views
         public string? Obywatelstwo { get; set; }
 
         // Адрес
+        public string? Wojewodztwo { get; set; }
+        public string? Miasto { get; set; }
         public string? Ulica { get; set; }
         public string? NumerDomu { get; set; }
         public string? NumerLokalu { get; set; }
-        public string? Miasto { get; set; }
         public string? KodPocztowy { get; set; }
-        public string? Poczta { get; set; }
-        public string? Gmina { get; set; }
-        public string? Powiat { get; set; }
-        public string? Wojewodztwo { get; set; }
-
-        // Адрес PL (доп)
-        public string? KodPocztowyPL { get; set; }
-        public string? MiastoPL { get; set; }
-        public string? UlicaPL { get; set; }
-        public string? NumerDomuPL { get; set; }
 
         // Семья и Контакты
         public string? ImieOjca { get; set; }
