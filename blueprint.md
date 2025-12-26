@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This application is a desktop utility built with Avalonia UI for entering and saving student data. The primary function is to capture detailed student information through a multi-tab form and persist it in a **PostgreSQL database**.
+This application is a desktop utility built with Avalonia UI for entering and saving student data. The primary function is to capture detailed student information through a multi-tab form and persist it in a **local SQLite database**. This ensures the application is portable and does not require any external database server setup.
 
 ## 2. Core Features & Design
 
@@ -15,16 +15,17 @@ A dedicated class `StudentData` encapsulates all student-related information, pr
 *   **Window:** A fixed-size window (`800x700`) for data entry.
 *   **Tabbed Layout:** A `TabControl` organizes the extensive data fields into five logical sections: "Учеба", "Личные данные", "Адрес", "Контакты/Семья", and "Документы/Статус".
 *   **Controls:** The form utilizes appropriate controls for each data type (`TextBox`, `DatePicker`, `CheckBox`).
-*   **Action Button:** A button at the bottom triggers the save operation. (Note: The button label is currently "Сохранить в CSV" and should be updated).
+*   **Action Button:** A button at the bottom triggers the save operation.
 
 ### 2.3. Database Service (`Services/DatabaseService.cs`)
 
 *   **Responsibility:** This class encapsulates all database-related logic, separating it from the UI layer.
-*   **Connection:** It uses the `Npgsql` library to connect to a PostgreSQL database. The connection string is hardcoded for simplicity.
+*   **Connection:** It uses the `Microsoft.Data.Sqlite` library to connect to a local SQLite database. The connection string is `Data Source=students.db`, which creates the database file in the application's execution directory.
+*   **Initialization:** The service's constructor calls a private `InitializeDatabase` method. This method ensures that the `students` table exists on application startup by executing a `CREATE TABLE IF NOT EXISTS` SQL command.
 *   **`SaveStudent` Method:** This public method accepts a `StudentData` object and performs the following:
-    1.  Opens a connection to the database.
+    1.  Opens a connection to the SQLite database.
     2.  Constructs an `INSERT INTO students (...) VALUES (...)` SQL command.
-    3.  Uses parameterized queries to safely insert a subset of student data (Identifikator, Nazwisko, Imie1, etc.) into the `students` table.
+    3.  Uses parameterized queries (`SqliteCommand`) to safely insert student data into the `students` table. Dates are stored as ISO 8601 strings.
 
 ### 2.4. UI Logic (`Views/MainWindow.axaml.cs`)
 
@@ -40,11 +41,13 @@ A dedicated class `StudentData` encapsulates all student-related information, pr
 
 *This section is for the current requested change.*
 
-**Request:** Migrate data persistence from CSV to a PostgreSQL database.
+**Request:** Migrate the database layer from PostgreSQL (Npgsql) to SQLite (Microsoft.Data.Sqlite) to ensure application portability.
 
 **Steps:**
-1.  [x] **Add Dependency:** Add the `Npgsql` NuGet package to the project.
-2.  [x] **Create Database Service:** Create a new `Services/DatabaseService.cs` class to handle database connections and `INSERT` operations.
-3.  [x] **Update UI Logic:** Modify `Views/MainWindow.axaml.cs` to remove the CSV-saving logic.
-4.  [x] **Integrate Service:** In `MainWindow.axaml.cs`, instantiate and use the new `DatabaseService` to save the student data.
-5.  [x] **Implement Error Handling:** Add a `try-catch` block to manage database exceptions and provide feedback to the user via the window title.
+1.  [x] **Update Dependencies:** Removed the `Npgsql` package and added the `Microsoft.Data.Sqlite` package in `myapp.csproj`.
+2.  [x] **Rewrite DatabaseService.cs:**
+    *   Replaced `using Npgsql;` with `using Microsoft.Data.Sqlite;`.
+    *   Changed the connection string to `"Data Source=students.db"`.
+    *   Added a constructor that calls an `InitializeDatabase` method to create the `students` table if it doesn't exist.
+3.  [x] **Update SaveStudent Method:** Refactored the method to use `SqliteConnection` and `SqliteCommand` for inserting data into the SQLite database.
+4.  [x] **Verify Build:** Compiled the project with `dotnet build` to ensure there were no errors after the migration.
