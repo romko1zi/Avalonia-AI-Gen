@@ -1,6 +1,8 @@
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Styling;
 using myapp.Services;
 using System.Linq;
 
@@ -47,6 +49,23 @@ namespace myapp.Views
             {
                 _databaseService.DeleteStudent(selectedStudent.Id);
                 LoadStudents();
+            }
+        }
+
+        private void ToggleTheme_Click(object? sender, RoutedEventArgs e)
+        {
+            var currentApp = Application.Current;
+            if (currentApp != null)
+            {
+                var currentTheme = currentApp.RequestedThemeVariant;
+                var newTheme = currentTheme == ThemeVariant.Light ? ThemeVariant.Dark : ThemeVariant.Light;
+                currentApp.RequestedThemeVariant = newTheme;
+
+                var themeButton = this.FindControl<Button>("ThemeButton");
+                if (themeButton != null)
+                {
+                    themeButton.Content = newTheme == ThemeVariant.Light ? "🌙" : "☀️";
+                }
             }
         }
     }

@@ -42,7 +42,7 @@ namespace myapp.Views
         public string? TelegramViber { get; set; }
         public string? Email { get; set; }
         public string? OsobaKontaktowa { get; set; }
-        public string? TelefonOsobyKontaktowej { get; aget; set; }
+        public string? TelefonOsobyKontaktowej { get; set; }
 
         // Документы и Статус
         public string? Paszport { get; set; }

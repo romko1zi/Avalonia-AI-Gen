@@ -3,25 +3,60 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="600"
         x:Class="myapp.Views.MainWindow"
         Title="Baza Studentów">
     <Grid RowDefinitions="Auto,*,Auto">
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" Margin="5">
             <Button Content="Dodaj Studenta" Click="AddStudent_Click"/>
+            <Button x:Name="ThemeButton" Content="🌙" Click="ToggleTheme_Click"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" x:Name="StudentsGrid" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="1" x:Name="StudentsGrid" IsReadOnly="True" AutoGenerateColumns="False" CanUserResizeColumns="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
-                <DataGridTextColumn Header="Imię" Binding="{Binding Imie1}"/>
+                <DataGridTextColumn Header="Identyfikator" Binding="{Binding Identifikator}"/>
+                <DataGridTextColumn Header="Data Przyjęcia" Binding="{Binding DataPrzyjecia, StringFormat='yyyy-MM-dd'}"/>
+                <DataGridTextColumn Header="Numer Ks" Binding="{Binding NumerKs}"/>
                 <DataGridTextColumn Header="Kierunek" Binding="{Binding Kierunek}"/>
                 <DataGridTextColumn Header="Semestr" Binding="{Binding Semestr}"/>
+                <DataGridTextColumn Header="Data Rozpoczęcia" Binding="{Binding DataRozpoczecia, StringFormat='yyyy-MM-dd'}"/>
+                <DataGridTextColumn Header="Rok Rozpoczęcia" Binding="{Binding RokRozpoczecia}"/>
+                <DataGridTextColumn Header="PESEL" Binding="{Binding Pesel}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Nazwisko}"/>
+                <DataGridTextColumn Header="Nazwisko Rodowe" Binding="{Binding NazwiskoRodowe}"/>
+                <DataGridTextColumn Header="Imię 1" Binding="{Binding Imie1}"/>
+                <DataGridTextColumn Header="Imię 2" Binding="{Binding Imie2}"/>
+                <DataGridTextColumn Header="Płeć" Binding="{Binding Plec}"/>
+                <DataGridTextColumn Header="Data Urodzenia" Binding="{Binding DataUrodzenia, StringFormat='yyyy-MM-dd'}"/>
+                <DataGridTextColumn Header="Miejsce Urodzenia" Binding="{Binding MiejsceUrodzenia}"/>
+                <DataGridTextColumn Header="Kraj Urodzenia" Binding="{Binding KrajUrodzenia}"/>
+                <DataGridTextColumn Header="Obywatelstwo" Binding="{Binding Obywatelstwo}"/>
+                <DataGridTextColumn Header="Województwo" Binding="{Binding Wojewodztwo}"/>
+                <DataGridTextColumn Header="Miasto" Binding="{Binding Miasto}"/>
+                <DataGridTextColumn Header="Ulica" Binding="{Binding Ulica}"/>
+                <DataGridTextColumn Header="Numer Domu" Binding="{Binding NumerDomu}"/>
+                <DataGridTextColumn Header="Numer Lokalu" Binding="{Binding NumerLokalu}"/>
+                <DataGridTextColumn Header="Kod Pocztowy" Binding="{Binding KodPocztowy}"/>
+                <DataGridTextColumn Header="Imię Ojca" Binding="{Binding ImieOjca}"/>
+                <DataGridTextColumn Header="Imię Matki" Binding="{Binding ImieMatki}"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}"/>
+                <DataGridTextColumn Header="Telegram/Viber" Binding="{Binding TelegramViber}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                <DataGridTextColumn Header="Osoba Kontaktowa" Binding="{Binding OsobaKontaktowa}"/>
+                <DataGridTextColumn Header="Telefon Kontaktowy" Binding="{Binding TelefonOsobyKontaktowej}"/>
+                <DataGridTextColumn Header="Paszport" Binding="{Binding Paszport}"/>
+                <DataGridTextColumn Header="Seria/Numer" Binding="{Binding SeriaNumer}"/>
+                <DataGridTextColumn Header="Wydany Przez" Binding="{Binding WydanyPrzez}"/>
+                <DataGridCheckBoxColumn Header="Status UKR" Binding="{Binding StatusUKR}"/>
+                <DataGridCheckBoxColumn Header="W Dzienniku" Binding="{Binding JestWDzienniku}"/>
+                <DataGridTextColumn Header="Przyczyna Opuszczenia" Binding="{Binding PrzyczynaOpuszczenia}"/>
+                <DataGridTextColumn Header="Data Opuszczenia" Binding="{Binding DataOpuszczenia, StringFormat='yyyy-MM-dd'}"/>
+                <DataGridTextColumn Header="Numer Decyzji" Binding="{Binding NumerDecyzji}"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5" HorizontalAlignment="Right" Spacing="10">
             <Button Content="Edytuj" Click="EditStudent_Click"/>
             <Button Content="Usuń" Click="DeleteStudent_Click"/>
         </StackPanel>
