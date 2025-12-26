@@ -20,7 +20,7 @@ namespace myapp.Views
         {
             var student = new StudentData
             {
-                // Учеба
+                // Edukacja
                 Identifikator = this.FindControl<TextBox>("IdentifikatorBox")?.Text,
                 DataPrzyjecia = this.FindControl<CalendarDatePicker>("DataPrzyjeciaPicker")?.SelectedDate?.Date,
                 NumerKs = this.FindControl<TextBox>("NumerKsBox")?.Text,
@@ -29,7 +29,7 @@ namespace myapp.Views
                 DataRozpoczecia = this.FindControl<CalendarDatePicker>("DataRozpoczeciaPicker")?.SelectedDate?.Date,
                 RokRozpoczecia = int.TryParse(this.FindControl<TextBox>("RokRozpoczeciaBox")?.Text, out var rok) ? rok : 0,
 
-                // Личные
+                // Dane osobowe
                 Pesel = this.FindControl<TextBox>("PeselBox")?.Text,
                 Nazwisko = this.FindControl<TextBox>("NazwiskoBox")?.Text,
                 NazwiskoRodowe = this.FindControl<TextBox>("NazwiskoRodoweBox")?.Text,
@@ -41,24 +41,24 @@ namespace myapp.Views
                 KrajUrodzenia = this.FindControl<TextBox>("KrajUrodzeniaBox")?.Text,
                 Obywatelstwo = this.FindControl<TextBox>("ObywatelstwoBox")?.Text,
 
-                // Адрес
+                // Adres
                 Wojewodztwo = this.FindControl<TextBox>("WojewodztwoBox")?.Text,
                 Miasto = this.FindControl<TextBox>("MiastoBox")?.Text,
                 Ulica = this.FindControl<TextBox>("UlicaBox")?.Text,
                 NumerDomu = this.FindControl<TextBox>("NumerDomuBox")?.Text,
                 NumerLokalu = this.FindControl<TextBox>("NumerLokaluBox")?.Text,
-                KodPocztowy = this.FindControl<TextBox>("KodPocztowyBox")?.Text,
+                KodPocztowy = this.FindControl<MaskedTextBox>("KodPocztowyBox")?.Text,
 
-                // Семья и Контакты
+                // Rodzina i kontakt
                 ImieOjca = this.FindControl<TextBox>("ImieOjcaBox")?.Text,
                 ImieMatki = this.FindControl<TextBox>("ImieMatkiBox")?.Text,
-                Telefon = this.FindControl<TextBox>("TelefonBox")?.Text,
+                Telefon = this.FindControl<MaskedTextBox>("TelefonBox")?.Text,
                 TelegramViber = this.FindControl<TextBox>("TelegramViberBox")?.Text,
                 Email = this.FindControl<TextBox>("EmailBox")?.Text,
                 OsobaKontaktowa = this.FindControl<TextBox>("OsobaKontaktowaBox")?.Text,
                 TelefonOsobyKontaktowej = this.FindControl<TextBox>("TelefonOsobyKontaktowejBox")?.Text,
 
-                // Документы и Статус
+                // Dokumenty i status
                 Paszport = this.FindControl<TextBox>("PaszportBox")?.Text,
                 SeriaNumer = this.FindControl<TextBox>("SeriaNumerBox")?.Text,
                 WydanyPrzez = this.FindControl<TextBox>("WydanyPrzezBox")?.Text,
@@ -72,11 +72,11 @@ namespace myapp.Views
             try
             {
                 _databaseService.SaveStudent(student);
-                this.Title = "Сохранено в Базу Данных!";
+                this.Title = "Zapisano pomyślnie w bazie danych!";
             }
             catch (Exception ex)
             {
-                this.Title = $"Ошибка: {ex.Message}";
+                this.Title = $"Błąd: {ex.Message}";
             }
         }
     }
