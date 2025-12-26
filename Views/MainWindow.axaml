@@ -2,8 +2,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
         x:Class="myapp.MainWindow"
-        Title="My First Avalonia App">
-    <TextBlock Text="Привет, Rider!" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        Title="Моя форма"
+        Width="400" Height="600"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        Background="White">
+    <StackPanel Margin="20" Spacing="15">
+        <TextBlock Text="Тестовая форма" FontWeight="Bold" HorizontalAlignment="Center" />
+        <TextBox Watermark="Введите текст..." />
+        <DatePicker />
+        <NumericUpDown Minimum="0" Maximum="10" Value="1" />
+        <ComboBox>
+            <ComboBoxItem>Красный</ComboBoxItem>
+            <ComboBoxItem>Зеленый</ComboBoxItem>
+            <ComboBoxItem>Синий</ComboBoxItem>
+        </ComboBox>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <RadioButton Content="Вариант А" />
+            <RadioButton Content="Вариант Б" />
+        </StackPanel>
+        <CheckBox Content="Я согласен" />
+        <Slider Value="30" />
+        <ListBox Height="100">
+            <ListBoxItem>Строка 1</ListBoxItem>
+            <ListBoxItem>Строка 2</ListBoxItem>
+        </ListBox>
+    </StackPanel>
 </Window>
