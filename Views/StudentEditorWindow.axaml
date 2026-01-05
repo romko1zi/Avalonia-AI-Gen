@@ -1,4 +1,3 @@
-
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,40 +10,39 @@
 
     <Grid RowDefinitions="*,Auto">
         <TabControl Grid.Row="0">
-            <!-- Edukacja -->
             <TabItem Header="Edukacja">
                 <ScrollViewer>
                     <StackPanel Margin="10" Spacing="8">
-                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" Gap="10">
-                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto">
+                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Identyfikator:"/>
                                 <TextBox x:Name="IdentifikatorBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Numer albumu:"/>
                                 <TextBox x:Name="NumerKsBox"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2">
+                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Data przyjęcia:"/>
-                                <CalendarDatePicker x:Name="DataPrzyjeciaPicker"/>
+                                <CalendarDatePicker x:Name="DataPrzyjeciaPicker" HorizontalAlignment="Stretch"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Data rozpoczęcia:"/>
-                                <CalendarDatePicker x:Name="DataRozpoczeciaPicker"/>
+                                <CalendarDatePicker x:Name="DataRozpoczeciaPicker" HorizontalAlignment="Stretch"/>
                             </StackPanel>
 
-                             <StackPanel Grid.Row="2" Grid.Column="0" Spacing="2">
+                             <StackPanel Grid.Row="2" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Kierunek studiów:"/>
                                 <TextBox x:Name="KierunekBox"/>
                             </StackPanel>
-                             <StackPanel Grid.Row="2" Grid.Column="1" Spacing="2">
-                                <Grid ColumnDefinitions="*,*" Gap="10">
-                                    <StackPanel Grid.Column="0" Spacing="2">
+                             <StackPanel Grid.Row="2" Grid.Column="1" Spacing="2" Margin="5">
+                                <Grid ColumnDefinitions="*,*">
+                                    <StackPanel Grid.Column="0" Spacing="2" Margin="0,0,5,0">
                                         <TextBlock Text="Semestr:"/>
                                         <TextBox x:Name="SemestrBox"/>
                                     </StackPanel>
-                                    <StackPanel Grid.Column="1" Spacing="2">
+                                    <StackPanel Grid.Column="1" Spacing="2" Margin="5,0,0,0">
                                         <TextBlock Text="Rok rozpoczęcia:"/>
                                         <TextBox x:Name="RokRozpoczeciaBox"/>
                                     </StackPanel>
@@ -55,52 +53,51 @@
                 </ScrollViewer>
             </TabItem>
 
-            <!-- Dane osobowe -->
             <TabItem Header="Dane osobowe">
                  <ScrollViewer>
                     <StackPanel Margin="10" Spacing="8">
-                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" Gap="10">
-                             <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                             <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Nazwisko:"/>
                                 <TextBox x:Name="NazwiskoBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Imię:"/>
                                 <TextBox x:Name="Imie1Box"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2">
+                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Nazwisko rodowe:"/>
                                 <TextBox x:Name="NazwiskoRodoweBox"/>
                             </StackPanel>
-                             <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2">
+                             <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Drugie imię:"/>
                                 <TextBox x:Name="Imie2Box"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Row="2" Grid.Column="0" Spacing="2">
+                            <StackPanel Grid.Row="2" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="PESEL:"/>
                                 <TextBox x:Name="PeselBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="2" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="2" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Płeć:"/>
                                 <TextBox x:Name="PlecBox"/>
                             </StackPanel>
 
-                             <StackPanel Grid.Row="3" Grid.Column="0" Spacing="2">
+                             <StackPanel Grid.Row="3" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Data urodzenia:"/>
-                                <CalendarDatePicker x:Name="DataUrodzeniaPicker"/>
+                                <CalendarDatePicker x:Name="DataUrodzeniaPicker" HorizontalAlignment="Stretch"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="3" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="3" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Miejsce urodzenia:"/>
                                 <TextBox x:Name="MiejsceUrodzeniaBox"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Row="4" Grid.Column="0" Spacing="2">
+                            <StackPanel Grid.Row="4" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Kraj urodzenia:"/>
                                 <TextBox x:Name="KrajUrodzeniaBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="4" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="4" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Obywatelstwo:"/>
                                 <TextBox x:Name="ObywatelstwoBox"/>
                             </StackPanel>
@@ -109,74 +106,72 @@
                 </ScrollViewer>
             </TabItem>
 
-            <!-- Adres -->
             <TabItem Header="Adres">
                  <ScrollViewer>
                     <StackPanel Margin="10" Spacing="8">
-                        <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto,Auto" Gap="10">
-                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2">
+                        <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto,Auto">
+                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Ulica:"/>
                                 <TextBox x:Name="UlicaBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Numer budynku:"/>
-                                <TextBox x:Name="NumerDomuBox"/>
+                                <TextBox x:Name="NumerDomuBox" Width="100"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="2" Spacing="2">
+                            <StackPanel Grid.Row="0" Grid.Column="2" Spacing="2" Margin="5">
                                 <TextBlock Text="Numer lokalu:"/>
-                                <TextBox x:Name="NumerLokaluBox"/>
+                                <TextBox x:Name="NumerLokaluBox" Width="100"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2">
+                            <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Miasto:"/>
                                 <TextBox x:Name="MiastoBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Województwo:"/>
-                                <TextBox x:Name="WojewodztwoBox"/>
+                                <TextBox x:Name="WojewodztwoBox" Width="150"/>
                             </StackPanel>
-                             <StackPanel Grid.Row="1" Grid.Column="2" Spacing="2">
+                             <StackPanel Grid.Row="1" Grid.Column="2" Spacing="2" Margin="5">
                                 <TextBlock Text="Kod pocztowy:"/>
-                                <MaskedTextBox x:Name="KodPocztowyBox" Mask="00-000"/>
+                                <MaskedTextBox x:Name="KodPocztowyBox" Mask="00-000" Width="100"/>
                             </StackPanel>
                         </Grid>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
 
-            <!-- Rodzina i kontakt -->
             <TabItem Header="Rodzina i kontakt">
                 <ScrollViewer>
                     <StackPanel Margin="10" Spacing="8">
-                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" Gap="10">
-                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto">
+                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Imię ojca:"/>
                                 <TextBox x:Name="ImieOjcaBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Imię matki:"/>
                                 <TextBox x:Name="ImieMatkiBox"/>
                             </StackPanel>
 
-                             <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2">
+                             <StackPanel Grid.Row="1" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Telefon:"/>
                                 <MaskedTextBox x:Name="TelefonBox" Mask="000-000-000"/>
                             </StackPanel>
-                             <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2">
+                             <StackPanel Grid.Row="1" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Telegram/Viber:"/>
                                 <TextBox x:Name="TelegramViberBox"/>
                             </StackPanel>
 
-                            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Spacing="2">
+                            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Spacing="2" Margin="5">
                                 <TextBlock Text="Adres e-mail:"/>
                                 <TextBox x:Name="EmailBox"/>
                             </StackPanel>
 
-                             <StackPanel Grid.Row="3" Grid.Column="0" Spacing="2">
+                             <StackPanel Grid.Row="3" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Osoba do kontaktu:"/>
                                 <TextBox x:Name="OsobaKontaktowaBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="3" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="3" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Telefon do osoby kontaktowej:"/>
                                 <TextBox x:Name="TelefonOsobyKontaktowejBox"/>
                             </StackPanel>
@@ -185,40 +180,39 @@
                 </ScrollViewer>
             </TabItem>
 
-            <!-- Dokumenty i status -->
             <TabItem Header="Dokumenty i status">
                 <ScrollViewer>
                     <StackPanel Margin="10" Spacing="8">
-                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto" Gap="10">
-                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                            <StackPanel Grid.Row="0" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Numer paszportu:"/>
                                 <TextBox x:Name="PaszportBox"/>
                             </StackPanel>
-                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2">
+                            <StackPanel Grid.Row="0" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Seria i numer dokumentu:"/>
                                 <TextBox x:Name="SeriaNumerBox"/>
                             </StackPanel>
 
-                             <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="2">
+                             <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Spacing="2" Margin="5">
                                 <TextBlock Text="Organ wydający:"/>
                                 <TextBox x:Name="WydanyPrzezBox"/>
                             </StackPanel>
 
-                             <StackPanel Grid.Row="2" Grid.Column="0" Spacing="15" Orientation="Horizontal">
+                             <StackPanel Grid.Row="2" Grid.Column="0" Spacing="15" Orientation="Horizontal" Margin="5">
                                 <CheckBox x:Name="StatusUKRCheckBox" Content="Status UKR"/>
                                 <CheckBox x:Name="JestWDziennikuCheckBox" Content="Wpisany do dziennika"/>
                             </StackPanel>
 
-                             <StackPanel Grid.Row="3" Grid.Column="0" Spacing="2">
+                             <StackPanel Grid.Row="3" Grid.Column="0" Spacing="2" Margin="5">
                                 <TextBlock Text="Przyczyna skreślenia:"/>
                                 <TextBox x:Name="PrzyczynaOpuszczeniaBox"/>
                             </StackPanel>
-                             <StackPanel Grid.Row="3" Grid.Column="1" Spacing="2">
+                             <StackPanel Grid.Row="3" Grid.Column="1" Spacing="2" Margin="5">
                                 <TextBlock Text="Data skreślenia:"/>
-                                <CalendarDatePicker x:Name="DataOpuszczeniaPicker"/>
+                                <CalendarDatePicker x:Name="DataOpuszczeniaPicker" HorizontalAlignment="Stretch"/>
                             </StackPanel>
                             
-                             <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Spacing="2">
+                             <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Spacing="2" Margin="5">
                                 <TextBlock Text="Numer decyzji o skreśleniu:"/>
                                 <TextBox x:Name="NumerDecyzjiBox"/>
                             </StackPanel>
